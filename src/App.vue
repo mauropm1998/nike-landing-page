@@ -1,47 +1,34 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
+  <main class="relative">
+    <Nav />
+    <section class="xl:padding-l wide:padding-r padding-b">
+      <Hero />
+    </section>
+    <section class="padding">
+      <PopularProducts />
+    </section>
+    <section class="padding">
+      <SuperQuality />
+    </section>
+    <section class="padding-x py-10">
+      <Services />
+    </section>
+    <section class="padding">
+      <SpecialOffer />
+    </section>
+    <section class="bg-pale-blue padding">
+      <CustomerReviews />
+    </section>
+    <section class="padding-x sm:py-32 py-16 w-full">
+      <Subscribe />
+    </section>
+    <section class="bg-black padding-x padding-t pb-8">
+      <Footer />
+    </section>
   </main>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+<script setup>
+import Nav from "./components/Nav.vue";
+import { Hero, SpecialOffer, Subscribe, SuperQuality, Services, Footer, PopularProducts, CustomerReviews } from "./components/sections/index";
+</script>
